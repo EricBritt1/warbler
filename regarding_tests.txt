@@ -1,0 +1,2 @@
+I struggled with the test portion of this assignment and due to the amount of time I spent on this assignment I've decided to submit it. I am on a bit of a time crunch but, will review the tests made by solution to get a solid understanding. Luckily my routes passed all of the solution made tests except for 4 in test_user_view. After reviewing I'll figure out the issues and then ask my mentor reasons why it could be failing. I CREDIT ALL TESTS TO SPRINGBOARD WARBLER SOLUTION!
+

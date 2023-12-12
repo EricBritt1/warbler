@@ -1,0 +1,22 @@
+How is the logged in user being kept track of?
+
+The logged in user is being kept track of via the function in @app.before_request. Before every request that route checks if there is a current user in the session. If there is it'll set user inside of the flask g object so then the class instance of user can be accessed throughout the flask view routes. 
+
+
+What is Flask’s g object?
+
+In flask, the 'g' object is a global context object that allows you to store and share data between different parts of your application during the lifetime of a single request. After the request any data within flask's g object is cleaned up so that's why @app.before_request view route had to be implemented to reinstate class instance of user within flask's g object.
+
+
+
+What is the purpose of add_user_to_g ?
+The purpose of add_user_to_g is to essntially do the following:
+1. Check if there is a logged in user. This is first done by, checking if there is a current user saved within the session of the app. If not user will be rediected to the login page.
+2. If there is a user then the current users query information will be set within the flask's g object as {user: (query information)}. Considering add_user_to_g is inside of @app.before_request, everytime a request is sent it'll be called to not only verify if there is current user key in session but, also to keep flask g object updated with user information.
+
+
+
+What does @app.before_request mean?
+
+@app.before_request means that every time there is a request made no matter the route, it'll execute the function tied to that route.
+
